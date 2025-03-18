@@ -1,7 +1,6 @@
 package Selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.compress.utils.OsgiUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
