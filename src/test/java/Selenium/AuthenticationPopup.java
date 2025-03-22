@@ -26,6 +26,7 @@ public class AuthenticationPopup {
         robot.keyRelease(KeyEvent.VK_A);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        System.out.println("Authentication Handled");
         driver.quit();
     }
 }
