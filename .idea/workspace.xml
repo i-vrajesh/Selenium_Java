@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="Calenders and Mouse Actions">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Selenium/Xpaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Selenium/Xpaths.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +71,12 @@
     &quot;assignee&quot;: &quot;i-vrajesh&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/i-vrajesh/SeleniumJava.git&quot;,
-    &quot;accountId&quot;: &quot;d576bafc-1674-4d3f-81fc-976bc88f341a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/i-vrajesh/Selenium_Java.git",
+    "accountId": "d576bafc-1674-4d3f-81fc-976bc88f341a"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -118,7 +120,7 @@
     "Gradle.SeleniumJava [test].executor": "Run",
     "Gradle.stepDefs.userWillOpenBrowser.executor": "Run",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "Merging develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Library/Selenium/Projects/SeleniumJava/src/main/java/com/example/seleniumJava/Main.java",

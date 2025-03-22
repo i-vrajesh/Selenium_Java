@@ -25,8 +25,17 @@ public class Xpaths {
             normalize-space - //label[normalize-space(text())='First Name'],
             last - //table[@id='contactList']/tbody/tr[last()],
             position - //table[@id='contactList']/tbody/tr[position()>2]
-        * Xpath Axes
+        * Xpath Axes :
+            ancestor - ancestor, ancestor-or-self (gives ancestor along with current element)
+            descendant - descendant, descendant-or-self (gives descendant along with current element)
+            sibling - preceding-sibling, following-sibling
+            parent - //td[text()='Maria Anders']/parent::tr
+            child - //td[text()='Maria Anders']/preceding-sibling::td/child::input[@type='checkbox']
         * Xpath Shortcuts
+            text()      -> .    = //label[text()='Repeat Password']         -> //label[.='Repeat Password']
+            child       -> /    = //div[@class='container']/child::h1       -> //div[@class='container']/h1
+            parent      -> /..  = //h1[.='Register']/parent::div            -> //h1[.='Register']/..
+            descendant  -> //   = //table[@id='contactList']/descendant::td -> //table[@id='contactList']//td
         * Third party Xpath Tools
         * */
         JavascriptExecutor js = (JavascriptExecutor) driver;
