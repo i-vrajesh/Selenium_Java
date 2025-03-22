@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="Waits and Screenshot">
-      <change beforePath="$PROJECT_DIR$/src/test/java/Selenium/BasicControls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Selenium/BasicControls.java" afterDir="false" />
+    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="Calenders and Mouse Actions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +94,7 @@
     "Application.CalenderControls.executor": "Run",
     "Application.JavaScriptExecutor.executor": "Run",
     "Application.MouseActions.executor": "Run",
+    "Application.Xpaths.executor": "Run",
     "Cucumber Java.Scenario: Login Amazon Application.executor": "Run",
     "Gradle.Build SeleniumJava.executor": "Run",
     "Gradle.CommonRunnerTest.executor": "Run",
@@ -127,20 +128,7 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.JavaScriptExecutor">
-    <configuration name="Base" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selenium.Base" />
-      <module name="SeleniumJava.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Xpaths">
     <configuration name="CalenderControls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Selenium.CalenderControls" />
       <module name="SeleniumJava.test" />
@@ -193,13 +181,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Xpaths" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Selenium.Xpaths" />
+      <module name="SeleniumJava.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Selenium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Xpaths" />
         <item itemvalue="Application.JavaScriptExecutor" />
         <item itemvalue="Application.CalenderControls" />
         <item itemvalue="Application.MouseActions" />
         <item itemvalue="Application.WebElementProperties" />
-        <item itemvalue="Application.Base" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +253,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742318986293</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Calenders and Mouse Actions">
+      <option name="closed" value="true" />
+      <created>1742581508397</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742581508397</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Calenders and Mouse Actions">
+      <option name="closed" value="true" />
+      <created>1742581562137</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742581562137</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +289,7 @@
     <MESSAGE value="FirstCommit" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Waits and Screenshot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Waits and Screenshot" />
+    <MESSAGE value="Calenders and Mouse Actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calenders and Mouse Actions" />
   </component>
 </project>
