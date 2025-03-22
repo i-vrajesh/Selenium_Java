@@ -17,7 +17,6 @@ public class BasicControls {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         //Radio btn
-
 //        WebElement femaleRBtn = driver.findElement(By.id("femalerb"));
 //        js.executeScript("arguments[0].scrollIntoView();",femaleRBtn);
 ////        femaleRBtn.click();
