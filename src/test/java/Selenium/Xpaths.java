@@ -48,7 +48,5 @@ public class Xpaths {
         driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
         Thread.sleep(2000);
         driver.quit();
-
-
     }
 }

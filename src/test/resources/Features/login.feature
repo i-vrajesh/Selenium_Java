@@ -7,6 +7,7 @@ Feature : Login feature
     Then user enters "<userID>" and "<password>" to login
     And user clicks continue button
     Then user lands in home page
+    And terminate browser
     Examples:
       | userID     | password  |
       | 6302069187 | VRam@0051 |

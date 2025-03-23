@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="Authentication Popup">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Selenium/AuthenticationPopup.java" afterDir="false" />
+    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="FileUpload &amp; DragDrop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/practice/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/practice/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Selenium/AuthenticationPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Selenium/AuthenticationPopup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Selenium/BasicControls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Selenium/BasicControls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Selenium/Xpaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Selenium/Xpaths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefs/stepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefs/stepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/login.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +59,8 @@
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
       </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -70,12 +76,12 @@
     &quot;assignee&quot;: &quot;i-vrajesh&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/i-vrajesh/Selenium_Java.git",
-    "accountId": "d576bafc-1674-4d3f-81fc-976bc88f341a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/i-vrajesh/Selenium_Java.git&quot;,
+    &quot;accountId&quot;: &quot;d576bafc-1674-4d3f-81fc-976bc88f341a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -95,8 +101,12 @@
     "Application.AuthenticationPopup.executor": "Run",
     "Application.BrokenLinks.executor": "Run",
     "Application.CalenderControls.executor": "Run",
+    "Application.DragAndDrop.executor": "Run",
+    "Application.FileUploads.executor": "Run",
     "Application.JavaScriptExecutor.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.MouseActions.executor": "Run",
+    "Application.ReadFromProp.executor": "Run",
     "Application.Xpaths.executor": "Run",
     "Cucumber Java.Scenario: Login Amazon Application.executor": "Run",
     "Gradle.Build SeleniumJava.executor": "Run",
@@ -121,6 +131,10 @@
     "Gradle.SeleniumJava [test].executor": "Run",
     "Gradle.stepDefs.userWillOpenBrowser.executor": "Run",
     "RunOnceActivity.git.unshallow": "true",
+    "TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml.executor": "Run",
+    "TestNG.C:/Library/Selenium/Projects/SeleniumJava/testNG.xml.executor": "Run",
+    "TestNG.TestNG_Practice.executor": "Run",
+    "TestNG.stepDefs.executor": "Run",
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -131,13 +145,25 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.AuthenticationPopup">
-    <configuration name="AuthenticationPopup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selenium.AuthenticationPopup" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Library\Selenium\Projects\SeleniumJava\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml">
+    <configuration name="Scenario: Login Amazon Application" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/login.feature" />
+      <option name="GLUE" value="StepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="SeleniumJava.test" />
+      <option name="NAME_FILTER" value="^Login Amazon Application$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login Amazon Application$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Login Amazon Application" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Selenium.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,65 +171,67 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrokenLinks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selenium.BrokenLinks" />
+    <configuration name="C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumJava.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/testNG.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalenderControls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selenium.CalenderControls" />
-      <module name="SeleniumJava.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="C:/Library/Selenium/Projects/SeleniumJava/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumJava" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaScriptExecutor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selenium.JavaScriptExecutor" />
+    <configuration name="TestNG_Practice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumJava.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Selenium.*" />
+          <option name="PATTERN" value="TestNG.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="TestNG" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.TestNG_Practice" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Xpaths" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selenium.Xpaths" />
+    <configuration name="stepDefs" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumJava.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Selenium.*" />
+          <option name="PATTERN" value="StepDefs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="StepDefs" />
+      <option name="MAIN_CLASS_NAME" value="StepDefs.stepDefs" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AuthenticationPopup" />
-        <item itemvalue="Application.BrokenLinks" />
-        <item itemvalue="Application.Xpaths" />
-        <item itemvalue="Application.JavaScriptExecutor" />
-        <item itemvalue="Application.CalenderControls" />
+        <item itemvalue="TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml" />
+        <item itemvalue="TestNG.C:/Library/Selenium/Projects/SeleniumJava/testNG.xml" />
+        <item itemvalue="TestNG.stepDefs" />
+        <item itemvalue="Cucumber Java.Scenario: Login Amazon Application" />
+        <item itemvalue="TestNG.TestNG_Practice" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +324,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742659738774</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Authentication Popup">
+      <option name="closed" value="true" />
+      <created>1742660749743</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742660749743</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Authentication Popup">
+      <option name="closed" value="true" />
+      <created>1742660987900</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742660987900</updated>
+    </task>
+    <task id="LOCAL-00013" summary="FileUpload &amp; DragDrop">
+      <option name="closed" value="true" />
+      <created>1742663650124</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742663650124</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,7 +371,9 @@
     <MESSAGE value="Calenders and Mouse Actions" />
     <MESSAGE value="Xpaths" />
     <MESSAGE value="Broken Links" />
+    <MESSAGE value="Merge remote-tracking branch 'i_vrajesh/Selenium_Java/develop' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Authentication Popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Authentication Popup" />
+    <MESSAGE value="FileUpload &amp; DragDrop" />
+    <option name="LAST_COMMIT_MESSAGE" value="FileUpload &amp; DragDrop" />
   </component>
 </project>

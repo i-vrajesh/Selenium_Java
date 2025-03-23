@@ -1,0 +1,97 @@
+TestNG: Test Next Generation is a testing framework inspired by JUnit and NUnit only in Java
+-> Powerful features such as parallel execution, grouping, data-driven testing and better reporting
+-> Unit test, functional test, integration test
+------------------------------------------------------------------------------------------------------------------
+Basic Structute:
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNG">
+    <test name="Practice">
+        <classes>
+            <class name="TestNG.TestNG_Practice"> <!-- Syntax: <class name="package.className"> -->
+                <methods>
+                    <include name="run" /> <!-- Syntax: <include name="MethodName inside defined class" /> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-----------------------------------------------------------------------------------------------------------------
+Assertions: Comparision between Actual and Expected
+
+assertEquals - Positive scenarios
+assertNotEquals - Negative scenarios
+assertTrue
+assertFalse
+assertNull
+assertNotNull
+
+//Instead of writing below line everytime calling method with Assert class name
+Assert.assertEquals(driver.findElement(By.id("output")).getText(),"You selected alert popup");
+
+//can write as below by importing static import class statement
+assertEquals(driver.findElement(By.id("output")).getText(),"You selected alert popup");
+
+//By using this static import statement
+import static org.testng.Assert.*; //use this line to reduce
+
+HardAssertion: Throws exception immediately upon failure and won't execute rest - Assert class all methods comes under Hart Assertions
+SoftAssertion: Throws exception at end of test or at specified location - methods from SoftAssert
+
+As Assert is static class no need of object creation, but for soft assert
+SoftAssert softassert = new SoftAssert(); //object creation
+softassert.assertEquals(actual,expected,"message"); //assertion
+softassert.assertAll();//throws errorat specified location
+------------------------------------------------------------------------------------------------------------------
+
+Annotation: TestNG just used annotations from Java not created newly (Ex: @Override, @FunctionalInterface)
+-> it is a form of metadatathat can be added to the java source code.
+
+Hierarchy of TestNG Annotations
+The sequence in which TestNG annotations are executed is as follows:
+
+@BeforeSuite: This method runs before the execution of all the test methods in the suite.
+@BeforeTest: This method runs before the execution of all the test methods in the test.
+@BeforeClass: This method runs before the first method of the current class is invoked.
+@BeforeMethod: This method runs before each test method.
+@Test: This is the actual test method where the main business logic resides.
+@AfterMethod: This method runs after each test method.
+@AfterClass: This method runs after all the test methods of the current class have been executed.
+@AfterTest: This method runs after the execution of all the test methods in the test.
+@AfterSuite: This method runs after the execution of all the test methods in the suite.
+
+@Parameters: To pass any info to testNG methods need to use Parameters
+-> should declare below suite tag in testng.xml along with method where need to use parameters
+-> <parameter name="browserName" value="Chrome"></parameter> //in testNG.xml
+-> @Parameters({"browsername","url"}) //above method if multiple variables use array
+-> @Parameters("url") //pass single string if single variable
+
+@OptionalParameter: if user forgot to mention value to parameter then default value will be considered
+-> Syntax:
+    public void method_Name(@Optional("chrome") String browsername){ }
+
+    If user forgot to pass browser name in testng.xml then it consider chrome
+    If user provide edge in testng.xml then priority will comes to edge
+
+@BeforeGroup:
+@AfterGroup:
+@DataProvider:
+
+@Factory:
+@Listeners:
+@Ignore:
+
+-----------------------------------------------------------------------------------------------------------------
+Enable or Disable Tests:
+
+In testng.xml
+<test name="Basic Controls" enabled="true"> <!-- By default it will be true-->
+<test name="Basic Controls" enabled="false"> <!-- to Disable -->
+------------------------------------------------------------------------------------------------------------------
+Prioritize Tests:
+
+
+
+
+

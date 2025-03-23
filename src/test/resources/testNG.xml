@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Practice">
+    <parameter name="browsername" value="Edge"/>
+    <parameter name="url" value="https://github.com/login"/>
+    <test name="Basic Controls">
+        <classes>
+            <class name="TestNG.TestNG_Parameters">
+                <methods>
+                    <include name="parameters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
