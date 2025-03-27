@@ -184,4 +184,31 @@ Group Dependencies: Achieved via .xml file using dependencies tags
 </suite>
 
 ---------------------------------------------------------------------------------------------------------------
-Data Provider:
+Data Provider: A container which passes data to our test methods, can execute with different sets of data
+
+@DataProvider(name = "test") //name for data provider to access uniquely
+@Test(dataProvider = "test") // use that unique name at where the data has to pass to test method
+
+-> What happens if we don;t provide name to DataProvider
+If we don't provide name to dataProvider, then it will throw runtime exception
+If we are not passing any name to data provider then bu default respective method name will be assigned to it
+
+-> Is it mandatory to provide Object[][] to DataProvider method
+    Object[]
+    Object[][]
+    Iterator<Object> - these are used when we store data in form of collections (like List, Set, Map)... then return data.iterator();
+    Iterator<Object[]>
+If we know specific data type of variables then can use String[] or Integer[]
+But if we are using mixed types then use Object[] bcoz, its super class of all datatypes arrays
+
+>>Indices : Use DataProvider partially in TestNG - Nothing but indexes off data which only need to pass
+It is a parameter in @dataProvider(indices = {0,2}) which accepts int[] nothing bus index of datas
+
+>>Create DataProviders in seperate class
+Can we Seperate? - Yes
+What is dataProviderClas? Why do we use? - It is an attribute which accept class as an argument to pass data from another class
+How to use dataProviderClass? - @Test(dataProvider="data", dataProviderClass = Data.class) //Syntax
+Can we store multiple DataProviders in dataPrivoderClass? - Yes, but executes only which one is specified
+Can we Have multiple dataProvidersClasses in a package? - Yes, but executes only which one is specified
+----------------------------------------------------------------------------------------------------------------------
+

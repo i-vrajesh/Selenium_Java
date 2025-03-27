@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="TestNg_Practice">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestNG/TestNG_Priority.java" afterDir="false" />
+    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="TestNG Practice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/TestNG_Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/TestNG_Notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testNG.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +51,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
@@ -92,81 +91,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AuthenticationPopup.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BrokenLinks.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CalenderControls.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DragAndDrop.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileUploads.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JavaScriptExecutor.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MouseActions.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ReadFromProp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Xpaths.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Login Amazon Application.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build SeleniumJava.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CommonRunnerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LoginTest.loginTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.Alerts.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.Base.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.BasicControls.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.Dropdowns.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.HandleFrames.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.HandleTextBox.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.Locators.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.Navigations.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.Screenshot.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.TimeAndWaits.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.WebElementProperties.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selenium.WindowHandling.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:Selnium.Base.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:com.example.seleniumJava.Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [:practice.Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SeleniumJava [test].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.stepDefs.userWillOpenBrowser.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.C:/Library/Selenium/Projects/SeleniumJava/testNG.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestNG_Practice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.stepDefs.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Library/Selenium/Projects/SeleniumJava/src/main/java/com/example/seleniumJava/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.44827586&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AuthenticationPopup.executor": "Run",
+    "Application.BrokenLinks.executor": "Run",
+    "Application.CalenderControls.executor": "Run",
+    "Application.DragAndDrop.executor": "Run",
+    "Application.FileUploads.executor": "Run",
+    "Application.JavaScriptExecutor.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MouseActions.executor": "Run",
+    "Application.ReadFromProp.executor": "Run",
+    "Application.Xpaths.executor": "Run",
+    "Cucumber Java.Scenario: Login Amazon Application.executor": "Run",
+    "Gradle.Build SeleniumJava.executor": "Run",
+    "Gradle.CommonRunnerTest.executor": "Run",
+    "Gradle.LoginTest.executor": "Run",
+    "Gradle.LoginTest.loginTest.executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.Alerts.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.Base.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.BasicControls.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.Dropdowns.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.HandleFrames.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.HandleTextBox.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.Locators.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.Navigations.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.Screenshot.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.TimeAndWaits.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.WebElementProperties.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selenium.WindowHandling.main()].executor": "Run",
+    "Gradle.SeleniumJava [:Selnium.Base.main()].executor": "Run",
+    "Gradle.SeleniumJava [:com.example.seleniumJava.Main.main()].executor": "Run",
+    "Gradle.SeleniumJava [:practice.Main.main()].executor": "Run",
+    "Gradle.SeleniumJava [test].executor": "Run",
+    "Gradle.stepDefs.userWillOpenBrowser.executor": "Run",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml.executor": "Run",
+    "TestNG.C:/Library/Selenium/Projects/SeleniumJava/testNG.xml.executor": "Run",
+    "TestNG.DataProvider_Test.iterator.executor": "Run",
+    "TestNG.DataProvider_Test.login.executor": "Run",
+    "TestNG.TestNG_Practice.executor": "Run",
+    "TestNG.stepDefs.executor": "Run",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Library/Selenium/Projects/SeleniumJava/src/main/java/com/example/seleniumJava/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.44827586",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Library\Selenium\Projects\SeleniumJava\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml">
-    <configuration name="Scenario: Login Amazon Application" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/login.feature" />
-      <option name="GLUE" value="StepDefs" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="SeleniumJava.test" />
-      <option name="NAME_FILTER" value="^Login Amazon Application$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login Amazon Application$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Login Amazon Application" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.DataProvider_Test.iterator">
     <configuration name="C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumJava.test" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/testNG.xml" />
@@ -187,7 +168,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNG_Practice" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProvider_Test.iterator" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumJava.test" />
       <extension name="coverage">
         <pattern>
@@ -196,8 +177,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestNG" />
-      <option name="MAIN_CLASS_NAME" value="TestNG.TestNG_Practice" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.DataProvider_Test" />
+      <option name="METHOD_NAME" value="iterator" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProvider_Test.login" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumJava.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestNG" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.DataProvider_Test" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -223,11 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.DataProvider_Test.iterator" />
+        <item itemvalue="TestNG.DataProvider_Test.login" />
         <item itemvalue="TestNG.C:/Library/Selenium/Projects/SeleniumJava/src/test/resources/testNG.xml" />
         <item itemvalue="TestNG.C:/Library/Selenium/Projects/SeleniumJava/testNG.xml" />
         <item itemvalue="TestNG.stepDefs" />
-        <item itemvalue="Cucumber Java.Scenario: Login Amazon Application" />
-        <item itemvalue="TestNG.TestNG_Practice" />
       </list>
     </recent_temporary>
   </component>
@@ -352,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742753769367</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="TestNG Practice">
+      <option name="closed" value="true" />
+      <created>1742837294786</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742837294786</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,8 +386,9 @@
     <MESSAGE value="Merge remote-tracking branch 'i_vrajesh/Selenium_Java/develop' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Authentication Popup" />
     <MESSAGE value="FileUpload &amp; DragDrop" />
-    <MESSAGE value="TestNg" />
     <MESSAGE value="TestNg_Practice" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestNg_Practice" />
+    <MESSAGE value="TestNg" />
+    <MESSAGE value="TestNG Practice" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestNG Practice" />
   </component>
 </project>
