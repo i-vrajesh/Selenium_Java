@@ -201,14 +201,19 @@ If we are not passing any name to data provider then bu default respective metho
 If we know specific data type of variables then can use String[] or Integer[]
 But if we are using mixed types then use Object[] bcoz, its super class of all datatypes arrays
 
->>Indices : Use DataProvider partially in TestNG - Nothing but indexes off data which only need to pass
+>>> Indices : Use DataProvider partially in TestNG - Nothing but indexes off data which only need to pass
 It is a parameter in @dataProvider(indices = {0,2}) which accepts int[] nothing bus index of datas
 
->>Create DataProviders in seperate class
+>>> Create DataProviders in seperate class
 Can we Seperate? - Yes
 What is dataProviderClas? Why do we use? - It is an attribute which accept class as an argument to pass data from another class
 How to use dataProviderClass? - @Test(dataProvider="data", dataProviderClass = Data.class) //Syntax
 Can we store multiple DataProviders in dataPrivoderClass? - Yes, but executes only which one is specified
 Can we Have multiple dataProvidersClasses in a package? - Yes, but executes only which one is specified
+
+>>> Integration of Excel with DataProvider : To achieve dynamic data providing to test instead of statically updating in code level
+
+Libraries available fro reading data from excel - Apache POI (which supports both older .xls version and newer .xlsx versions)
+
 ----------------------------------------------------------------------------------------------------------------------
 

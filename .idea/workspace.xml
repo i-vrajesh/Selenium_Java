@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="TestNG Practice">
+    <list default="true" id="68c76625-7773-497c-b4e3-7c6b819e5731" name="Changes" comment="Backup">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/DataProvider_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/DataProvider_Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/TestNG_Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/TestNG_Notes.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,10 +140,10 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Library/Selenium/Projects/SeleniumJava/src/main/java/com/example/seleniumJava/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.44827586",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -360,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742837294786</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="TestNG upto DataProviders Basics">
+      <option name="closed" value="true" />
+      <created>1743090723970</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1743090723975</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,6 +401,8 @@
     <MESSAGE value="TestNg_Practice" />
     <MESSAGE value="TestNg" />
     <MESSAGE value="TestNG Practice" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestNG Practice" />
+    <MESSAGE value="TestNG upto DataProviders Basics" />
+    <MESSAGE value="Backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backup" />
   </component>
 </project>
