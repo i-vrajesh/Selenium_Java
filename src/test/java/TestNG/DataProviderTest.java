@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class DataProvider_Test {
+public class DataProviderTest {
 
     @Test(dataProvider = "data")
     public void login(String userName, String password){
@@ -16,7 +16,7 @@ public class DataProvider_Test {
     }
     @DataProvider()
     public Object[][] data(){
-        Object[][] data = new Object[2][2];
+        Object[][] data = new Object[3][3];
         data[0][0] = "Admin";
         data[0][1] = "admin123";
         data[1][0] = "Admin";
