@@ -62,41 +62,41 @@ or
 --------------
 8-Xpath Axes :
 --------------			
-			[P]
+					[P]
 
-			| ^
+					| ^
 	        (Child) | | (Parent)
-			| |
-	    		v |   
+					| |
+	    			v |   
 	     (Sibling)	      (Sibling)
 	[B]-------------[A]-------------[C]
 
-			| ^
+					| ^
 	        (Child) | | (Parent)
-			| |
-			v |
+					| |
+					v |
 
-	    		[D]
+	    			[D]
 
-			| ^
+					| ^
 	        (Child) | | (Parent)
-			| |
-			v |
+					| |
+					v |
 	     (Sibling)	      (Sibling)
   	[E]-------------[Me]------------[F]      For [Me] Ancestors are [P],[A],[D] and Descendants are [G],[H],[I],[J],[K]
-		       /    \
+		       		/   \
 	              /      \ 
 	     (Child) /        \ (Child)
-		    /          \
-		   / (Sibling)  \
-		 [G]------------[H]
-				^ \
-		 | ^  (Parent) /   \
-	(Child)	 | |          /     \ (Child)
-		 v |         /       \
-			    /         v
-		 [I]       [J]--------[K]
-			      (Sibling)
+		    	/          \
+		  	   / (Sibling)  \
+			 [G]------------[H]
+							^ \
+		 	| ^  (Parent) /   \
+	(Child)	| |          /     \ (Child)
+			v |         /       \
+			 		   /         v
+			[I]       [J]--------[K]
+			      		(Sibling)
 
 1-ancestor		: //table[@id='contactList']/ancestor::div         		gives all ancestor div tags
 2-ancestor-or-self	: //td[text()='Helen Bennett']/ancestor-or-self::* 		returns all ancestors along with it (17 ancestors +1 self count)
@@ -130,4 +130,5 @@ descendant  -> //   = //table[@id='contactList']/descendant::td -> //table[@id='
 > ChroPath
 > Selectors Hub
 > LetXPath
+
 	
