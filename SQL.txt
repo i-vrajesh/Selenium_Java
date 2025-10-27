@@ -1,0 +1,883 @@
+SQL - Skillup
+
+Download Microsoft SQL Server 2019 Developer Edition 
+Default one instead of other 2 custom download options
+Install SSMS - SQL Server Management Studio - IDE
+After Installing and open workspace and connect server
+
+SELECT @@SERVERNAME 
+--to check current server
+
+SELECT @@VERSION 
+--to check currentl version
+
+AdventureWorks Sample Database for hands-on purpose
+
+____________________________________________________
+
+		SELECT statement in SQL
+____________________________________________________
+
+FROM clause -> SELECT clause
+
+SELECT * FROM DatabaseName.SchemaName.TableName
+SELECT 'FirstName' FROM Person.Person; 
+
+--DatabaseName we can exclude as we are inside that particular database
+--Displays a single column with all rows with text FirstName
+--SQL commands are not case sensitive
+--Order of columns specified in query will be displayed as it is in result
+
+-----------------------------------
+> DISTINCT - filters unique records
+------------------------------------
+SELECT DISTINCT col1, col2 
+FROM SchemaName.TableName;
+--It doesnot exclude null values
+
+------------------
+> CASE with SELECT
+------------------
+SELECT ID, VacationHours,    --(,) must after colmns & before CASE			   
+CASE WHEN VacationHours > 70 
+THEN 'Vacation hrs exceeded' --message for condition
+CASE VacationHours 
+BETWEEN 40 AND 70 
+THEN 'Vacation hrs average'
+ELSE 'Vacation hrs in limit' --message single quotes
+END AS VacationHourLimit     --new column with ALIAS in result ending 
+FROM HumanResources.Employee;
+
+____________________________________________________
+
+	WHERE clause - to filter the records
+____________________________________________________
+
+FROM clause -> WHERE clause -> SELECT clause
+ 
+SELECT ID, MaritialStatus, BirthDate 
+FROM HumanResources.Employee 
+WHERE MaritialStatus = 'S' AND 
+WHERE year(BirthDate) > '1985';
+
+---------------------------------------------
+> Comparision Operators  =, <, <=, >, >=, !=
+---------------------------------------------
+SELECT Country 
+From Table 
+WHERE Country!= 'US';
+
+-----------------------------------
+> Arithmetic Operators  +, -, *, /
+-----------------------------------
+SELECT StandardCost, ListPrice, 
+StandardCost + ListPrice 
+AS SumListPriceCost 
+FROM Table 
+WHERE StandardCost - ListPrice < 10;
+
+----------------------------------
+> Logical Operators - AND, OR, NOT
+-----------------------------------
+SELECT * FROM Employees 
+WHERE Department = 'Sales' AND Age > 30;
+
+SELECT * FROM Employees
+WHERE Department = 'Sales' 
+OR Department = 'Marketing';
+
+SELECT * FROM Employees
+WHERE NOT Department = 'HR';
+
+-------------------------------
+> Concatenation Operator - "+" 
+-------------------------------
+SELECT FirstName, LastName, FirstName + ' ' + LastName AS FullName 
+FROM Person.Person 
+WHERE FirstName + ' ' + LastName = 'John Clav';
+
+------------------------
+> IS NULL & IS NOT NULL
+-----------------------
+SELECT Color FROM Table 
+WHERE Color IS NULL; 		
+--gives all NUll Values
+
+SELECT Color FROM Table 
+WHERE Color IS NOT NULL; 	
+--excludes all NULL values
+
+------------------
+> BETWEEN operator
+------------------
+SELECT Age FROM Table 
+WHERE Age BETWEEN 18 AND 60; 	
+--Here 18 & 60 are also included
+
+SELECT Age FROM Table 
+WHERE Age NOT BETWEEN 18 AND 60;	
+--Here 18 & 60 are also included
+
+----------------------
+> IN & NOT IN operator
+----------------------
+SELECT ProductID FROM Table 
+WHERE ProductID IN (1,4,7);
+
+SELECT ProductID FROM Table 
+WHERE ProductID NOT IN (2,5,8);
+
+------------------
+> % LIKE Operator
+-------------------
+SELECT FirstName FROM Table 
+WHERE FirstName LIKE %John%;
+
+SELECT FirstName FROM Table 
+WHERE FirstName NOT LIKE %John%;
+
+--%John - John should be last 
+--John% - Starts with John
+--%John% - John can be anywhere
+
+-----------------------
+> LIKE Operator with []
+------------------------
+SELECT Country FROM Table 
+WHERE Country LIKE 'U[SK]';
+--Gives Country records having US & UK
+--we can even use '[AU][PK]' gives AP, AK, UP, UK
+
+-------------------------------------
+> LIKE Operator with Character range
+-------------------------------------
+SELECT RollNo FROM Table 
+WHERE RollNo LIKE '[1-5]'% 
+--gives range from starting to ending.
+--LIKE 'L[A-Z]-[0-9]%' = LE-1001, LA-1971,...
+
+---------------------------------------
+> LIKE Operator with (^) Negation Character
+---------------------------------------
+LIKE 'A[^B-D]' gives AE, AF,.. excludes AB, AC, AD
+
+--------------------------------
+> LIKE Operator with Underscore
+--------------------------------
+LIKE 'AL____' 
+--each underscore represents each character
+--There are 4 underscores so total word length should be 6 including A & L
+--we can get ALASKA as result
+
+-----------------------------
+> Escaping Single Characters
+----------------------------
+WHERE Name LIKE '%''%';
+--extra single character is used in  middle to resolve syntax error issue
+
+____________________________________________________
+
+		ORDER BY Clause
+____________________________________________________
+
+FROM -> WHERE -> SELECT -> ORDER BY
+
+------------
+> ASC & DESC
+------------
+
+ORDER BY Age ASC/DSC --by default it's ASC
+--If NULL values are present then SQL consider them as lowest values
+
+ORDER BY Rec1 ASC, Rec2 DESC 
+--1st it will consider Rec1 and after Rec2 within ASC try to apply DESC of Rec2
+
+SELECT Row1, Row2, Row3 
+FROM Table ORDER BY 2 DESC, 3;
+--Last 2 indicates Row2 from our selection order
+
+-------
+> LEN
+-------
+SELECT ID, Name, Address 
+FROM Table ORDER BY LEN(Address) ASC;
+--will sort based on length of Address field
+
+---------
+> OFFSET
+---------
+SELECT Id 
+FROM Table 
+ORDER BY Id ASC
+OFFSET 0 ROWS 		--OFFSET means exclude
+FETCH NEXT 5 ROWS ONLY;
+--selects first 5 rows of Id ascencding order
+
+------
+> TOP
+------
+SELECT TOP 2 Id
+FROM Table
+ORDER BY Id ASC;
+--selects first 2 rows of Id ascending order 
+
+--------
+> TIES
+--------
+SELECT TOP 2 WITH TIES ProductId, Name, Cost
+FROM Table
+ORDER BY Cost DESC;
+--WITH TIES gives similar ignoring repetative
+
+----------
+> PERCENT
+----------
+SELECT TOP 10 PERCENT ProductId, Name, Cost
+FROM Table
+ORDER BY Cost DESC;
+-- gives top 10% from all records as per filter
+
+__________________________________________________
+
+		GROUP BY Clause
+__________________________________________________
+
+FROM -> WHERE -> GROUP BY -> SELECT -> ORDER BY
+
+SELECT OrderID, sum(OrderQty)
+FROM Table
+GROUP BY OrderID;
+--gives each OrderID having how many OrderQty
+
+----------
+> COUNT()
+----------
+
+SELECT Dept, COUNT(Dept)
+FROM Table
+GROUP BY Dept;
+--both are same above and below
+SELECT Dept, COUNT(*)
+FROM Table
+GROUP BY Dept;
+
+____________________________________________________
+
+		Numeric Functions
+____________________________________________________
+
+sum() - calculates sum of numbers
+avg() - calculates avg of numbers
+max() - to get max val of records
+min() - to get min val of records
+count() - to get the count of records
+ABS(-123), ABS(+123), ABS($123) = 123 absolute value
+CEILING(98.77) = 99.00
+FLOOR(98.77) = 98.00
+RAND() - gives random value btwn 0 & 1
+ROUND(34.6789,2) = 34.6800 rounds 2 decimal places
+
+___________________________________________________
+
+		String Functions
+___________________________________________________
+
+SELECT CHARINDEX('D','DAD'); = 1
+SELECT CHARINDEX('D','DAD',2); = 3 
+--starts from 2nd index
+
+DataLength(' John ') = 6 
+--consider leading and tailing spaces 
+--where LEN() ignores
+
+---------------------
+> CONCAT() function
+--------------------
+CONCAT(FirstName,' ',LastName)     
+-- Ignore Null values if exists and give remaining
+
+FirstName + ' ' + LastName         
+-- Gives Null if atleast one of the value is null
+
+CONCAT_WS('.', 'adventure', 'com') 				
+--adventure.com
+
+CONCAT(FirstName,LastName,'@',CONCAT_WS('.','adventure','com')) 
+--JohnClav@adventure.com
+
+----------------
+> CAST function 
+----------------
+converts a value or field into another particular datatype
+
+SELECT CAST (1.234 AS INT); 		
+--Ans is 1 (Convert lower data type to higher
+
+SELECT CAST (DateTimeColumn AS DATE) 	
+-- 2001-07-19 00:00:00:000 format to normal 2001-07-19
+
+SELECT Name, CAST(BirthDate AS datetime) AS BirthDateTime FROM Table;
+--Converts normal 2001-07-19 to 2001-07-19 00:00:00:000 format
+
+-------
+> STR()
+-------
+SELECT ProductID, STR(ProductID) AS StringProductID
+FROM Production.Product;
+--converts numeric ID data type to String datatype
+--before ID-17 numeric
+--after ID-17 string
+-----------------
+> FORMAT Function
+-----------------
+SELECT FORMAT(20200616,'####-##-##');
+--2020-06-16
+
+SELECT FORMAT(20200616,'####/##/##');
+--2020/06/16
+
+---------------------------
+> LEFT() , RIGHT() & LEN()
+----------------------------
+LEFT('JOHN',2) = JO
+RIGHT('MARK',3) = ARK
+LEN(' DAVID ') = 5 
+--LEN ignores leading & tailing spaces where DataLength will include
+
+--------------------------------------------
+> Lower(), Upper(), Itrim(), rtrim(), trim()
+--------------------------------------------
+LOWER('HELLO') = hello
+UPPER('world') = WORLD
+Ltrim(' Hello') = Hello - trims leading space
+rtrim('Hello ') = Hello - trims tailing space
+trim(' Hello ') = trims both leading & tailing
+
+-----------------------------------
+> REPLACE(), REPLICATE(), REVERSE()
+------------------------------------
+REPLACE('john@gmail.com','gmail','email')
+--john@email.com
+
+REPLICATE('Hello',3)
+--HelloHelloHello
+
+REVERSE('KIM')
+--MIK
+
+-----------------------------------------
+> Substring(string, from position, length)
+------------------------------------------
+Substring('Alexa',2,3) = lex
+
+____________________________________________________
+
+		Date Functions
+____________________________________________________
+
+---------------
+> DateAdd()
+---------------
+DateAdd(format, value, column)
+DateAdd(yyyy, 3, DateColumn)
+--adds 3 years to every record in column
+--can add date, quarter, milliseconds
+
+---------------
+> DateDiff()
+---------------
+DateDiff(yyyy, dateCol1, DateCol2)
+--gives difference between 2 fields
+
+------------------------------------
+> DatePart(date-interval, dateField)
+------------------------------------
+DatePart(mm,DateCol)
+--extracts month in int value and same for other  given parameter
+
+------------------------------------
+> DateName(date-interval, dateField)
+------------------------------------
+DateName(mm,DateCol)
+--gived month names as April, June
+
+-------------------
+> Day([datefield])
+-------------------
+Day(DateCol)
+--Instead of DatePart(date, DateCol)
+--which extracts Day value from record
+
+---------------------
+> Month([date field])
+---------------------
+Month(DateCol)
+--Instead of DatePart(month, DateCol)
+--which extracts Month value from record
+
+---------------------
+> Year([date field])
+---------------------
+Year(DateCol)
+--Instead of DatePart(year, DateCol)
+--which extracts Year value from record
+
+-------------------------
+> SystemDate Functions
+------------------------
+SELECT CURRENT_TIMESTAMP; 
+SELECT getdate();
+SELECT sysdatetime();	--with extra precision
+SELECT SYSDATETIMEOFFSET(); --+even extra timezone
+
+---------------------------------
+> IsDate(), IsNull(), IsNumeric()
+---------------------------------
+IsDate(1) = 0 boolean False
+IsDate(19/07/2001) = 1 boolean True
+
+IsNull(NULL,'Abc') --replace NULL with Abc
+
+IsNumeric(1) = 1 boolea true
+IsNUmeric('Hello') = 0 boolean false
+IsNumeric(NULL) = 0 boolean False
+
+---------
+> if()
+---------
+if(test_condition, arg1, arg2)
+if(Price>=Cost, 'Profit', 'Loss')
+____________________________________________________
+
+		HAVING Clause
+____________________________________________________
+
+There are 2 types of functions - aggregate & regular
+WHERE doesn't allow aggregate functions along with regular functions
+to overcome that HAVING Clause is used
+
+Order of Writing
+SELECT->FROM->WHERE->GROUP BY->HAVING->ORDER BY
+
+Order of Execution
+FROM->WHERE->GROUP BY->HAVING->SELECT->ORDER BY
+
+SELECT DueDate,Sum(OrderQty) AS TotalOrderPerDueDate
+FROM Purchasing.PurchaseOrderDetail
+WHERE YEAR(DueDate) > 2011 AND Month(DueDate) < 9 
+GROUP BY DueDate
+HAVING sum(OrderQty) < 6000
+ORDER BY DueDate DESC;
+
+___________________________________________________
+
+			SUB QUERY
+____________________________________________________
+
+using IN we can write sub queries
+
+SELECT NationalIDNumber, JobTitle, HireDate
+FROM HumanResources.Employee
+WHERE BusinessEntityID IN
+   (SELECT BusinessEntityID
+     FROM HumanResources.EmployeeDepartmentHistory
+   )
+ORDER BY JobTitle;
+
+-----------------------------------------
+> EXISTS - gives true/false to main query
+-----------------------------------------
+SELECT BusinessEntityId, JobTitle 
+FROM HumanResources.Employee
+WHERE EXISTS
+  (SELECT DepartmentID
+   FROM HumanResources.Department
+   WHERE Name = 'Sales'
+  ) AND JobTitle LIKE '%Sales%';
+
+-------------------
+> Nesting Subquery
+-------------------
+SELECT DISTINCT ProductSubCategoryID
+FROM Production.Product
+WHERE ProductSubCategoryID IN
+   (SELECT ProductSubCategoryID
+    FROM Production.ProductSubcategory
+    WHERE ProductCategoryID IN
+      (SELECT ProductCategoryID 
+       FROM Production.ProductCategory
+       WHERE Name LIKE '%Bikes%'
+   )
+  );
+
+---------------------
+> ANY & ALL Operators
+---------------------
+ANY returns true if any one of subquery is true
+ALL returns true if all values in subquery meets condition
+
+____________________________________________________
+
+		UNION and UNION ALL
+____________________________________________________
+
+UNION - combines multiple SELECT statements and remove duplicates
+UNION ALL - combines multiple SELECT statements but donot remove duplicates
+
+SELECT PurchaseOrderDetailID
+FROM Purchasing.PurchaseOrderDetail
+   UNION --or UNION ALL
+SELECT TaxAmt
+FROM Purchasing.PurchaseOrderHeader
+ORDER BY PurchaseOrderDetailID ASC;
+
+--UNION removed duplicates where UNION ALL doesn't
+--All SELECT statements should have same no.of columns in same order.
+--All columns in each SELECT stateemnt should have compatible data types.
+--UNION/UNION ALL combines rows from multiple tables but they donot join columns.
+
+--------------------
+> INTERSECT Operator
+--------------------
+--Combines distinct rows from multiple tables that are common
+
+C1 - {42,15,18,20,25}
+C2 - {20,40,25}
+C1 INTERSECT C2 - {20,25)
+
+SELECT ProductSubCategoryID
+FROM Production.Product
+  INTERSECT
+SELECT ProductSubCategoryID
+FROM Production.ProductSubcategory;
+
+--------------------
+> EXCEPT Operator
+-------------------
+--Combines records from multiple tables and returns only distinct rows from 1st query that are not present in other remaining queries
+
+C1 - {42,15,18,20,25}
+C2 - {20,40,25}
+C1 EXCEPT C2 - {42,15,18}
+
+SELECT SalesOrderID
+FROM Sales.SalesOrderDetail
+   EXCEPT
+SELECT CustomerID
+FROM Sales.Customer;
+
+_____________________________________________________
+
+			JOINS
+_____________________________________________________
+
+--Without using JOIN keyword it's called as Implicit Join
+
+SELECT tA.col1, tA.col2,..,tB.col1,tB.col2,..
+FROM tableA tA, tableB tB
+WHERE tA.Col1 = tB.Col1;
+
+--------------
+> Inner JOIN
+--------------
+--Return only matching/common records from 2 or mote tables
+
+SELECT tA.col1, tA.col2,..,tB.col1,tB.col2,..
+FROM tableA tA
+	INNER JOIN
+tableB tB
+ON tA.col1 = tB.col1;
+
+------------------------------
+> LEFT JOIN = LEFT OUTER JOIN
+------------------------------
+--Return all the records from Left Table and only the matching records from Right Table
+--If there is no matching records from right table then will return NULL values for the records for right table
+
+SELECT TL.col1,TL.col2,..,TR.col1,TR.col2,..
+FROM Lefttable TL
+	LEFT JOIN
+Righttable TR
+ON TL.col1 = TR.col2;
+
+------------------------------
+> RIGHT JOIN = RIFHT OUTER JOIN
+------------------------------
+--Return all the records from Right Table and only the matching records from Left Table
+--If there is no matching records from Left table then will return NULL values for the records for RIGHT table
+
+SELECT TL.col1,TL.col2,..,TR.col1,TR.col2,..
+FROM Lefttable TL
+	RIGHT JOIN
+Righttable TR
+ON TL.col1 = TR.col2;
+
+-----------------------------
+> FULL JOIN - FULL OUTER JOIN
+-----------------------------
+-- Combination of LEFT JOIN & RIGHT JOIN
+-- Total 3 combinations (Left, Common, Right)
+-- If record matches both then returns both tables
+-- If record only from left table while right table doesn't contain that record then return all values from left and null for all cols from right. vice versa
+
+SELECT TL.col1,TL.col2,..,TR.col1,TR.col2,..
+FROM Lefttable TL
+	FULL JOIN
+Righttable TR
+ON TL.col1 = TR.col1;
+
+----------------------------
+> CROSS JOIN/ CARTESIAN JOIN
+----------------------------
+-- Combines each record from one table with each record from another table
+-- In simpler way if Table1 having 5 rows and Table2 having 10 rows it will return 5*10=50 rows.
+-- In practical scenario avaid this query where tables having large no.of records.
+-- Bcoz it consumes lot of resources & time, sometimes sqk server may hang.
+
+SELECT * FROM table1, table2;
+SELECT * FROM table1 CROSS JOIN table2;
+_____________________________________________________
+
+	Creating Tables, Keys & Constraints
+_____________________________________________________
+
+DataTypes 			- Bytes   - Frequency
+
+bit(0,1,NULL)			- 1byte   - High
+tinyint(0 to 255) 		- 1byte   - Less
+smallint(-2^15 to 2^15) 	- 2bytes  - High
+int(-2^31 to 2^31) 		- 4bytes  - High
+bigint(-2^63 to 2^63) 		- 8bytes  - Less
+decimal(t,r)(-10^38 to 10^38) 	- 5-17bts - High 
+smallmoney(-214748.3648 to +) 	- 4bytes  - Less
+money	 			- 8bytes  - High
+float(n) 			- 4/8byts - High
+real 				- 4bytes  - Less
+
+char(n)(max 8000chars)		-fixed n(char) - High
+varchar(n)			-2b+n(chars) - High
+text(to store vary length of2GB)-2b+n(chars) - Less
+nchar(n)(fixedL unicode 0-4000) -2*n byts  - High
+nvarchar(n)(var length from abov)-2*n byts - High
+image				- 0 to 2GB - Rare
+
+datetime			- 8bytes  - High
+date				- 3bytes  - High
+time				- 3-5byts - Less
+timestamp			- 	  - Less
+
+------------------
+> CREATE DATABASE
+------------------
+CREATE DATABASE <dataBaseName>
+CREATE TABLE tableName 
+(
+  col1 dataType1,
+  col2 dataType2,
+  ...
+)
+
+Ex: --without constraints
+CREATE TABLE Stores
+(
+  StoreId INT IDENTITY,
+  StoreNumber Varchar(50),
+  PhoneNumber CHAR(14),
+  Email Varchar(50),
+  Address Varchar(120),
+  City Varchar(40),
+  State Varchar(10),
+  ZipCode INT
+);
+
+--with Constraints
+CREATE TABLE retail.UniqueStores
+(
+  StoreID INT PRIMARY KEY, 
+  ProdID INT PRIMARY KEY,
+  StoreName Varchar(255) NOT NULL UNIQUE,
+  ItemName Varchar(255) DEFAULT 'GeneralStores',
+  MinQty INT CHECK(MinQty >=10)
+  CONSTRAINT UK_UniqueStores_StoreId_StoreNumber 
+  UNIQUE (StoreId,StoreNumber),
+  PRIMARY KEY (StoreID, ProdID)
+--can also declare like this
+);
+
+---------------
+> Foreign Key
+---------------
+Links a Child Table with it's Parent table
+
+CONSTRAINT FOREIGN KEY(col1,col2..) REFERENCES parentTable(col1,col2,..)
+
+ON DELETE (NO ACTION/ CASCADE/ SET NULL/ SET DEFAULT)
+ON UPDATE (NO ACTION/ CASCADE/ SET NULL/ SET DEFAULT)
+
+NO ACTION   - when a record is deleted/updated from parent table, then throw an error & rollback the action on parent table
+CASCADE     - when a record is deleted/updated from parent table, then related record in child table is automaticaly deleted
+SET NULL    - when a record is deleted/updated from parent table, then related record in the child table is set to NULL
+SET DEFAULT - when a record is deleted/updated from parent, then related record in the child table is set to DEFAULT.
+
+-- If you wish to insert record in the Child table, then that record must exist in the Parent table
+-- If you wish to delete a record from the Parent table which has a linked record in the Child table, then you have to remove the linked record from Child table first.
+-- A NULL is allowed in FOREIGN KEY.
+
+---------------
+> UNIQUE INDEX
+---------------
+Used to impose that no duplicate value is allowed for a column.
+
+CREATE UNIQUE INDEX indexName ON tableName(col1,col2,...)
+
+-----------
+> INDEX
+----------
+-- Used ro select records faster from DB 
+-- SubSet of  UNIQUE INDEX
+-- will allow duplicates
+
+CREATE INDEX indexName ON tableName(col1,col2,...)
+
+_________________________________________________
+
+			INSERT
+_________________________________________________
+
+INSERT INTO tableName(col1,col2,...) VALUES (val1,val2,...)
+
+-- IDENTITY constraint will autoincrement the values in rows if we missed to add
+
+INSERT INTO retail.Stores 
+VALUES
+(
+ 'I12345',
+ '+91-9999999999',
+ 'test1@test.com',
+ 'Dummy street123',
+ 'Bangalore',
+ 'Karnataka',
+ 123456
+);
+--will indert based on order of columns
+
+---------
+> UPDATE
+---------
+UPDATE tableName
+SET
+col1 = val1,
+col2 = val2,
+...
+WHERE optionalCondition;
+
+_________________________________________________
+
+			VIEWS
+_________________________________________________
+
+-- Encapsulate the Main Table
+-- DO not store data permanently
+-- CODE complex logic in view
+-- Access only required data
+
+CREATE VIEW <viewName> AS Query;
+
+--------------------
+CREATE OR ALTER VIEW
+--------------------
+-- To create a view if it is not existing or to alter the view if it is existing.
+
+CREATE OR ALTER VIEW <viewName> AS Query;
+
+-- To DROP
+DROP VIEW <viewName>
+
+_________________________________________________
+
+		SELECT INTO & INSERT INTO
+_________________________________________________
+
+--------------
+> SELECT INTO
+--------------
+-- TO create a new Table from old Table
+
+SELECT * INTO <newTable> FROM <oldTable>
+SELECT col1,col2,.. INTO <ewTable> FROM <oldTable>
+
+EX: SELECT * INTO retail.StoreProdsEmpty  
+FROM retail.StoreProds
+WHERE 1 = 0;
+
+--------------
+> INSERT INTO
+--------------
+-- To INSERT(Copy) records in a table from another table
+
+INSERT INTO <table1> 
+SELECT * 
+FROM <table2> 
+{WHERE cond};
+
+INSERT INTO <table1(c1,c2,...)> 
+SELECT c1,c2,...
+FROM <table2> 
+{WHERE cond};
+
+_________________________________________________
+
+		ALTER Statement
+_________________________________________________
+
+-- To Change Structure of Table
+-- by adding new cols, constraints & keys
+-- can delete an existing cols, constrains & index
+-- chnage cols, keys or constraints
+
+------------
+> ALTER ADD 
+------------
+-- To add new column, constraint or key
+
+ALTER TABLE <tableName> ADD {columnDetail | constraintDetail | keyDetail}
+
+Example: 
+ALTER TABLE InvestorIssuers
+ADD CONSTRAINT PK_InvestorIssuers_InvestorId_IssuerID
+PRIMARY KEY(InvestorId, IssuerId) --adding primary key
+DEFAULT 'General' FOR InvestorName;  --adding default value
+
+------------
+> ALTER DROP
+------------
+-- To completely remove a column or constraint
+
+ALTER TABLE <tableName> 
+DROP {COLUMN colDetail | CONSTRAINT constraintDetail}
+
+Examples:
+ALTER TABLE Investors
+DROP COLUMN InvestorStartDate;
+ 
+ALTER TABLE Investors
+DROP CONSTRAINT DF_Investors_InvestorStatus;
+
+-------------
+> RENAMING
+-------------
+-- USE SP_RENAME to rename a Column or Table
+-- For Column
+SP_RENAME '<oldColName>','<newColName>','COLUMN'
+-- For Table
+SP_RENAME '<oldTableName>','<newTableName>'
+
+-------------------
+> DELETE and DROP
+-------------------
+-- DELETE used to delete records from Table
+DELETE FROM <tableName> WHERE <condition>
+
+-- DEOP is used to drop an object like table
+DROP TABLE <tableName>
+

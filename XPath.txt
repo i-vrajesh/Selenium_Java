@@ -1,0 +1,133 @@
+XPath Practice Page: https://www.hyrtutorials.com/p/add-padding-to-containers.html
+
+--------------------
+1-XPATH Introduction : 
+--------------------
+XML Path Language
+It's a query language for selecting nodes from an XML document or finding  elements in HTML web page.
+
+-----------------
+2-Types of Xpath : 
+-----------------
+Absolute(/) : /html/body/div[2]/div[6]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/article/div/div/form/div[1]
+Relative(//): 
+
+------------------------
+3-XPath using Attributes : 
+------------------------
+//tagName[@attribute='value']
+//a[@title='Search W3Schools'] or //a[@title=\"Search W3Schools\"]
+
+-----------------
+4-Xpath Operators :
+-----------------
+ =, !=, <, <=, >, >= 
+( = & != ) can be used for both text and numeric comparisions
+( <, <=, >, >= ) can only be used for numeric comparision
+
+<input id="input" maxlength="10" name="name" type="text">
+//input[@name='name']
+//div[@class!='container']
+//input[@maxlength<10]
+//input[@maxlength<=10]
+//input[@maxlength>10]
+//input[@maxlength>=10]
+
+-------------------
+5-Xpath Conditions : 
+-------------------
+and, or, not
+<input id="input" maxlength="10" name="name" type="text">
+//input[@maxlength=10 and @id='input' or @type='type' not(@name='name1')]
+//input[not(@maxlength=11)] not condition is like a method()
+        
+------------------
+6-Xpath with Index :
+-------------------
+
+//table[@id='contactList']/tbody/tr[3]/td[1]
+or
+(//table[@id='contactList']/tbody/tr/td)[15]
+
+-----------------
+7-Xpath Functions :
+-----------------
+1) text - //a[text()='Sign in into account'] require to pass entire text
+2) contains - //div[contains(@class,'signin')], //a[contains(text(),'Sign in into')] contains allows partial text and partial attribute values as well
+3) starts-with - //a[starts-with(text(),'Sign in into')]
+4) normalize-space - //label[normalize-space(text())='First Name']
+5) last - //table[@id='contactList']/tbody/tr[last()]
+6) position - //table[@id='contactList']/tbody/tr[position()>2], //...[position()=3], //...[position()!=5]
+
+--------------
+8-Xpath Axes :
+--------------			
+			[P]
+
+			| ^
+	        (Child) | | (Parent)
+			| |
+	    		v |   
+	     (Sibling)	      (Sibling)
+	[B]-------------[A]-------------[C]
+
+			| ^
+	        (Child) | | (Parent)
+			| |
+			v |
+
+	    		[D]
+
+			| ^
+	        (Child) | | (Parent)
+			| |
+			v |
+	     (Sibling)	      (Sibling)
+  	[E]-------------[Me]------------[F]      For [Me] Ancestors are [P],[A],[D] and Descendants are [G],[H],[I],[J],[K]
+		       /    \
+	              /      \ 
+	     (Child) /        \ (Child)
+		    /          \
+		   / (Sibling)  \
+		 [G]------------[H]
+				^ \
+		 | ^  (Parent) /   \
+	(Child)	 | |          /     \ (Child)
+		 v |         /       \
+			    /         v
+		 [I]       [J]--------[K]
+			      (Sibling)
+
+1-ancestor		: //table[@id='contactList']/ancestor::div         		gives all ancestor div tags
+2-ancestor-or-self	: //td[text()='Helen Bennett']/ancestor-or-self::* 		returns all ancestors along with it (17 ancestors +1 self count)
+3-descendant		: //table[@id='contactList']/descendant::*	   		gives all 55 descendants
+4-sdescendant-or-self	: //table[@id='contactList']/descendant-or-self::* 		gives 56 (55 + self)
+5-preceeding-sibling	: //td[text()='Maria Anders']/preceding-sibling::td/child::input
+6-following-sibling	: //label[text()='Email']/following-sibling::input[@type='text']
+7-parent		: //td[text()='Helen Bennett']/parent::tr/child::td/child::input
+8-child			: //table[@id='contactList']/child::tbody/child::tr[1]
+9-preceeding		: //label[text()='Password']/preceding::input[1]		same working as following 
+10-following		: 
+[I] and [J] are not siblings, If we want to get locator from [I] to [J]
+[I]/parent::[G]/following-sibling::[H]/child::[J] Instead of this  
+[I]/following::[J]
+
+Ex:
+ //label[text()='Password']/parent::div/following-sibling::div[1]/child::input
+ //label[text()='Password']/following::input[1]	
+
+----------------
+9-Xpath Shortcuts:
+----------------
+text()      -> .    = //label[text()='Repeat Password']         -> //label[.='Repeat Password']
+child       -> /    = //div[@class='container']/child::h1       -> //div[@class='container']/h1
+parent      -> /..  = //h1[.='Register']/parent::div/h1         -> //h1[.='Register']/../h1
+descendant  -> //   = //table[@id='contactList']/descendant::td -> //table[@id='contactList']//td
+
+---------------------------
+10-Third party Xpath Tools:
+---------------------------
+> ChroPath
+> Selectors Hub
+> LetXPath
+	
