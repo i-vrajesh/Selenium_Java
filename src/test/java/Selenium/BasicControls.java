@@ -6,8 +6,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
+@Test
 public class BasicControls {
+
+    @Test
     public static void main(String[] args) throws InterruptedException {
 //        System.setProperty("webDriver.chrome.driver","//Path");
         WebDriverManager.chromedriver().setup();
